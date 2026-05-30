@@ -3,399 +3,559 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mrigank Bhargava</title>
-  <meta name="description" content="Economics, quantitative finance, and AI. UN Youth Fellow, World Rank 2 at IEO 2025, MIT Sloan Research.">
+  <title>Mrigank Bhargava — Portfolio</title>
+  <meta name="description" content="Personal website of Mrigank Bhargava. Economics, quantitative finance, and AI. UN Youth Fellow, World Rank 2 at IEO 2025, MIT Sloan Research.">
+  <meta name="keywords" content="Mrigank Bhargava, Mrigank Bhargava MIT, Mrigank Bhargava UN, Mrigank Bhargava Economics, Quantitative Finance, AI Research, Project Janseva">
+  <meta name="author" content="Mrigank Bhargava">
+  
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts Connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inconsolata:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="container">
+  <!-- ====== ====== PROGRESS BAR ====== ====== -->
+  <div class="progress-rule" id="prog"></div>
 
-    <!-- ====== THEME TOGGLE ====== -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
-      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </button>
+  <!-- ====== ====== TOPBAR ====== ====== -->
+  <header class="topbar">
+    <a href="#" class="topbar-logo">MRIGANK BHARGAVA</a>
+    <div class="topbar-right">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      
+      <!-- Hamburger Menu -->
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-    <!-- ====== HERO ====== -->
-    <section class="hero section animate-in">
-      <div class="hero-header">
-        <h1 class="hero-title">
-          Hi, I'm <span class="name-highlight water-text" id="water-name">Mrigank Bhargava</span>.
-        </h1>
-        <a href="https://mrigankswork.github.io/mrigank.github.io/Mrigank_Bhargava_Resume.pdf" target="_blank" class="resume-btn" id="resume-btn" title="Download Resume">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
-        </a>
+  <!-- ====== ====== NAVIGATION OVERLAY ====== ====== -->
+  <nav class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <a href="#" class="nav-link">Home</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#research" class="nav-link">Research & Papers</a>
+    <a href="#photography" class="nav-link">Photography</a>
+    <a href="#contact" class="nav-link">Correspondence</a>
+    <div class="nav-hr"></div>
+    <div class="nav-socials-row">
+      <a href="https://www.linkedin.com/in/mrigank-bhargava" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/mrigankswork" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:mrigankswork@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.instagram.com/mrigank.02/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </nav>
+
+  <!-- ====== ====== DOCUMENT LAYOUT ====== ====== -->
+  <div class="document">
+
+    <!-- ====== TITLE PAGE ====== -->
+    <div class="titlepage" id="top">
+      <div class="doc-meta-top">
+        <span>MRIGANK BHARGAVA</span>
+        <span>DELHI, INDIA</span>
       </div>
-      <p class="hero-subtitle">
-        I love economics, quantitative finance, and building software that solves real problems — from voice-based accounting systems to mathematical financial art.
-      </p>
-    </section>
-
-    <!-- ====== RADIAL ORGANIZATION GRAPH ====== -->
-    <section class="section animate-in" style="margin-top: 4rem;">
-      <p class="section-label" style="text-align: center; justify-content: center; margin-bottom: 0;">Organisations I've Worked With</p>
-      <div class="radial-container" id="radial-container">
-        <svg class="radial-lines" id="radial-lines"></svg>
-
-        <div class="radial-center">
-          <img src="profile.jpg" alt="Mrigank Bhargava">
-        </div>
-
-        <div class="radial-card">
-          <div class="radial-header">
-            <div class="radial-logo"><img src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.un.org&size=128" alt="UN Logo" onerror="this.style.display='none'"></div>
-            <div class="radial-title">United Nations</div>
-          </div>
-          <div class="radial-role">Youth Fellow 2025</div>
-          <div class="radial-text">UN ECOSOC 2025 & UN HLPF 2025. Also serving as UN NGO Representative for Accessibility Atlas.</div>
-        </div>
-
-        <div class="radial-card">
-          <div class="radial-header">
-            <div class="radial-logo"><img src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.mit.edu&size=128" alt="MIT Logo" onerror="this.style.display='none'"></div>
-            <div class="radial-title">MIT Sloan</div>
-          </div>
-          <div class="radial-role">Research Assistant</div>
-          <div class="radial-text">Reworking the linearity assumption function for asset pricing factor models with a PhD fellow.</div>
-        </div>
-
-        <div class="radial-card">
-          <div class="radial-header">
-            <div class="radial-logo">PJ</div>
-            <div class="radial-title">Project Janseva</div>
-          </div>
-          <div class="radial-role">Founder</div>
-          <div class="radial-text">Driving social impact and connecting communities with essential services.</div>
-        </div>
-
-        <div class="radial-card">
-          <div class="radial-header">
-            <div class="radial-logo"><img src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.nyu.edu&size=128" alt="NYU Logo" onerror="this.style.display='none'"></div>
-            <div class="radial-title">NYU Stern</div>
-          </div>
-          <div class="radial-role">Data Science Intern</div>
-          <div class="radial-text">Assisting a PhD student with data science research methodologies (Jul '25 — ongoing).</div>
-        </div>
-
-        <div class="radial-card">
-          <div class="radial-header">
-            <div class="radial-logo"><img src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.dpsnoida.co.in&size=128" alt="DPS Logo" onerror="this.style.display='none'"></div>
-            <div class="radial-title">DPS Noida</div>
-          </div>
-          <div class="radial-role">Head Boy</div>
-          <div class="radial-text">Led debate and MUN teams to national victories. Principal's Excellence in Academics (6 years).</div>
-        </div>
-
-        <div class="radial-card">
-          <div class="radial-header">
-            <div class="radial-logo"><img src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.iefp.org.au&size=128" alt="IEFP Logo" onerror="this.style.display='none'"></div>
-            <div class="radial-title">IEFP (Australia)</div>
-          </div>
-          <div class="radial-role">Senior Writer</div>
-          <div class="radial-text">Publishing economic research and policy analysis with the Institute of Economic and Financial Policy.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== TABS ====== -->
-    <nav class="tabs-nav animate-in">
-      <button class="tab-btn active" data-tab="tab-me">Me</button>
-      <button class="tab-btn" data-tab="tab-papers">Papers</button>
-      <button class="tab-btn" data-tab="tab-photos">Photos</button>
-    </nav>
-
-    <!-- ====== TAB: ME ====== -->
-    <div id="tab-me" class="tab-pane active">
-
-      <!-- Bento Box Highlights -->
-      <div class="section animate-in stagger">
-        <p class="section-label">Highlights</p>
-        <div class="bento-grid">
-          
-          <div class="bento-item span-4">
-            <div class="bento-icon">🥈</div>
-            <div class="bento-title">World Rank 2 — IEO 2025</div>
-            <div class="bento-desc">Secured World Rank 2 at the International Economics Olympiad 2025 in Baku, scoring 191.38/200 in the Economics Round.</div>
-          </div>
-
-          <div class="bento-item span-2">
-            <div class="bento-icon">🇺🇳</div>
-            <div class="bento-title">UN Representative</div>
-            <div class="bento-desc">One of 5 delegates under 18 to represent India at the UN High Level Political Forum & ECOSOC 2025.</div>
-          </div>
-
-          <div class="bento-item span-6">
-            <div class="bento-icon">🔬</div>
-            <div class="bento-title">MIT Sloan Research</div>
-            <div class="bento-desc">
-              Quantitative Finance Research Assistant under a PhD Fellow at MIT Sloan, analyzing and developing novel financial models.
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Full Lists -->
-      <div class="section animate-in" style="margin-top: 3rem;">
-        
-        <p class="section-label">Full Achievements</p>
-        <ul class="bento-list" style="margin-bottom: 3rem;">
-          <li>Only speaker under 18 from India to address the presidential committee at the UN ECOSOC Youth Forum 2025.</li>
-          <li>One of 5 delegates under 18 to represent India at the UN High Level Political Forum 2025.</li>
-          <li>Delivered a speech at the Mission of Senegal to the UN as a highlighted speaker.</li>
-          <li>Speaker at the UN Driving Youth-Led Innovation for Decent Work session.</li>
-          <li>Only member ever below 18 to present research at the YSI ISHET 2025 Conference at IIT Delhi.</li>
-          <li>Completed Advanced Trading & Portfolio Management at IIT Kanpur (Prof. Abhinava Tripathi).</li>
-          <li>Published EU MFA 2020 policy review with the European Commission (IEFP).</li>
-          <li>Accepted to Algoverse AI Research Program.</li>
-          <li>All India Rank 1 — National French Olympiad (100/100, 2023).</li>
-        </ul>
-
-        <p class="section-label">Additional Positions</p>
-        <ul class="bento-list" style="margin-bottom: 3rem;">
-          <li>Research Member — Indian Society for History of Economic Thought.</li>
-          <li>2x Team Leader — Wharton Global High School Investment Competition.</li>
-          <li>India Ambassador — Ultra AI (May 2025).</li>
-        </ul>
-
-        <p class="section-label">Competition Wins</p>
-        <ul class="bento-list">
-          <li>1st Overall — Brand Revival Competition at GDGSN 2025 (~400 participants).</li>
-          <li>Runner's Up — ZMUN 2025 (Individual 2nd Place, team 12 awards) as Head Delegate.</li>
-          <li>National Debates 2025 — Represented school as team lead (3 chosen out of 400).</li>
-          <li>Best Individual Delegate & Best Delegation — MMUN 2025 (4 trophies) as Head Delegate.</li>
-          <li>Principal's Excellence in Academics — Scholar badge for 6 continuous years.</li>
-          <li>1st Place — Best Business Pitch at BIZECO '24, DPSR (Gold Medal).</li>
-          <li>2x Best Delegation Overall — St. Columba's MUN (most prestigious HS MUN in India, 2023–24).</li>
-          <li>Inter DPS Nationals — Chosen (5 out of 800) at Lucknow 2024.</li>
-        </ul>
-
-      </div>
-
-      <!-- Socials -->
-      <div class="section animate-in" style="margin-top: 3rem;">
-        <p class="section-label">Connect</p>
-        <div class="socials-row">
-          <a href="https://www.linkedin.com/in/mrigank-bhargava" target="_blank" class="social-link" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="mailto:mrigankswork@gmail.com" class="social-link" title="Email">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-          <a href="https://webtv.un.org/en/asset/k15/k15u7flcna?kalturaStartTime=10031" target="_blank" class="social-link" title="UN Speech Video">
-            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div> <!-- /tab-me -->
-
-    <!-- ====== TAB: PAPERS ====== -->
-    <div id="tab-papers" class="tab-pane">
-
-      <div class="section animate-in">
-        <p class="section-label">Selected Works & Papers</p>
-        <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 2rem;">Click on any card to view the associated research paper or demo directly.</p>
-
-        <div class="projects-grid stagger">
-          
-          <a href="https://drive.google.com/file/d/1vI6h-0hsKTDxSVp3x0kP090IL0QeWx46/view?usp=sharing" target="_blank" class="project-card animate-in">
-            <div class="project-header">
-              <span class="project-icon">🎙️</span>
-              <span class="project-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-            <h3 class="project-title">Audio Ledger Paper</h3>
-            <p class="project-desc">Research paper detailing the development of a voice-based accounting system utilizing speech recognition to generate financial statements.</p>
-            <div class="project-footer">
-              <span class="project-tag">2024</span><span class="project-tag">Speech AI</span><span class="project-tag">Finance</span>
-            </div>
-          </a>
-
-          <a href="https://drive.google.com/file/d/1Tqnk8anDVGUQSaGGaKd-tMDEW9iSzL9H/view?usp=sharing" target="_blank" class="project-card animate-in">
-            <div class="project-header">
-              <span class="project-icon">🧮</span>
-              <span class="project-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-            <h3 class="project-title">MIT Factor Model Abstract</h3>
-            <p class="project-desc">Abstract on reworking the linearity assumption in Fama-French 3 asset pricing factor models, conducted with MIT Sloan.</p>
-            <div class="project-footer">
-              <span class="project-tag">2025</span><span class="project-tag">MIT Sloan</span><span class="project-tag">Quant Finance</span>
-            </div>
-          </a>
-
-          <a href="https://drive.google.com/file/d/1fF3KlEFoJ0gh5cAoPaER-ZT36VYvL1cn/view?usp=sharing" target="_blank" class="project-card animate-in">
-            <div class="project-header">
-              <span class="project-icon">📊</span>
-              <span class="project-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-            <h3 class="project-title">Mathematical Financial Art</h3>
-            <p class="project-desc">Visualizing stochastic processes and chaos theory (Brownian Motion, Lorenz Attractors) through generative artwork.</p>
-            <div class="project-footer">
-              <span class="project-tag">2025</span><span class="project-tag">Generative Math</span>
-            </div>
-          </a>
-
-          <a href="https://jansevoury.vercel.app" target="_blank" class="project-card animate-in">
-            <div class="project-header">
-              <span class="project-icon">🌿</span>
-              <span class="project-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-            <h3 class="project-title">Project Janseva Platform</h3>
-            <p class="project-desc">Live social impact platform connecting communities with essential services and resources.</p>
-            <div class="project-footer">
-              <span class="project-tag">2024</span><span class="project-tag">Web Deployment</span>
-            </div>
-          </a>
-
-          <a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14457-EU-financial-aid-to-10-partner-countries-COVID-19-macro-financial-assistance-package-evaluation/F3522355_en" target="_blank" class="project-card animate-in">
-            <div class="project-header">
-              <span class="project-icon">🇪🇺</span>
-              <span class="project-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-            <h3 class="project-title">EU MFA Policy Review</h3>
-            <p class="project-desc">Published financial policy review of the EU Macro Financial Assistance 2020 package with the European Commission.</p>
-            <div class="project-footer">
-              <span class="project-tag">2024</span><span class="project-tag">Policy Analysis</span>
-            </div>
-          </a>
-
-          <a href="https://drive.google.com/file/d/1tF98k7ZH7K_knzZYxcMmsj3hKKuXn9_1/view?usp=sharing" target="_blank" class="project-card animate-in">
-            <div class="project-header">
-              <span class="project-icon">🤖</span>
-              <span class="project-link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-            </div>
-            <h3 class="project-title">AI Models Comparative Testing</h3>
-            <p class="project-desc">Paper discussing the comparative testing methodologies and results for various AI models.</p>
-            <div class="project-footer">
-              <span class="project-tag">Machine Learning</span><span class="project-tag">Testing</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- Additional Links -->
-      <div class="section animate-in">
-        <p class="section-label" style="margin-top: 2rem;">Additional Publications</p>
-        <div class="pubs-list stagger">
-          <a href="https://drive.google.com/file/d/1B9WAQi6MloKuTH2OVcHZ_7GK7RlhJ666/view?usp=sharing" target="_blank" class="pub-item animate-in">
-            <span class="pub-title">ISHET 2025 — IIT Delhi Abstract</span>
-            <span class="pub-arrow">→</span>
-          </a>
-          <a href="https://drive.google.com/file/d/18j7jTsWkHKHm5KkjmQTQTTKFGj7_eNGz/view?usp=sharing" target="_blank" class="pub-item animate-in">
-            <span class="pub-title">GSSI Novel Indicator Paper</span>
-            <span class="pub-arrow">→</span>
-          </a>
-          <a href="https://www.southasiamonitor.org/spotlight/greenium-paradox-can-south-asia-align-climate-finance-investor-demands" target="_blank" class="pub-item animate-in">
-            <span class="pub-title">Green Bonds Article (South Asia Monitor)</span>
-            <span class="pub-arrow">→</span>
-          </a>
-          <a href="https://www.southasiamonitor.org/index.php/spotlight/climate-credit-markets-south-asia-next-frontier-rural-finance" target="_blank" class="pub-item animate-in">
-            <span class="pub-title">Climate Finance Article (South Asia Monitor)</span>
-            <span class="pub-arrow">→</span>
-          </a>
-        </div>
-      </div>
-
-    </div> <!-- /tab-papers -->
-
-    <!-- ====== TAB: PHOTOS ====== -->
-    <div id="tab-photos" class="tab-pane">
-      <div class="section animate-in">
-        <p class="section-label">Through My Lens</p>
-        
-        <div class="photo-gallery stagger">
-          <!-- Postcard 1 -->
-          <div class="postcard animate-in" style="transform: rotate(-3deg);">
-            <img src="photo1.jpeg" alt="Photography 1" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">New York, NY</span>
-              <span class="postcard-date">Aug 2025</span>
-            </div>
-          </div>
-          
-          <!-- Postcard 2 -->
-          <div class="postcard animate-in stagger-1" style="transform: rotate(2deg) translateY(20px);">
-            <img src="photo2.jpeg" alt="Photography 2" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">Dubai, UAE</span>
-              <span class="postcard-date">Jul 2024</span>
-            </div>
-          </div>
-          
-          <!-- Postcard 3 -->
-          <div class="postcard animate-in stagger-2" style="transform: rotate(-1deg);">
-            <img src="photo3.jpeg" alt="Photography 3" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">New Delhi, India</span>
-              <span class="postcard-date">Jan 2024</span>
-            </div>
-          </div>
-          
-          <!-- Postcard 4 -->
-          <div class="postcard animate-in stagger-3" style="transform: rotate(4deg) translateY(-15px);">
-            <img src="photo4.jpeg" alt="Photography 4" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">London, UK</span>
-              <span class="postcard-date">Mar 2025</span>
-            </div>
-          </div>
-
-          <!-- Postcard 5 -->
-          <div class="postcard animate-in" style="transform: rotate(-2deg) translateY(10px);">
-            <img src="photo5.jpeg" alt="Photography 5" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">Paris, France</span>
-              <span class="postcard-date">Sep 2023</span>
-            </div>
-          </div>
-
-          <!-- Postcard 6 -->
-          <div class="postcard animate-in stagger-1" style="transform: rotate(3deg);">
-            <img src="photo6.jpeg" alt="Photography 6" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">Tokyo, Japan</span>
-              <span class="postcard-date">Oct 2024</span>
-            </div>
-          </div>
-
-          <!-- Postcard 7 -->
-          <div class="postcard animate-in stagger-2" style="transform: rotate(-4deg) translateY(-5px);">
-            <img src="photo7.jpeg" alt="Photography 7" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">Sydney, Australia</span>
-              <span class="postcard-date">Dec 2024</span>
-            </div>
-          </div>
-
-          <!-- Postcard 8 -->
-          <div class="postcard animate-in stagger-3" style="transform: rotate(1deg) translateY(15px);">
-            <img src="photo8.jpeg" alt="Photography 8" loading="lazy">
-            <div class="postcard-caption">
-              <span class="postcard-loc">Geneva, Switzerland</span>
-              <span class="postcard-date">May 2025</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- /tab-photos -->
-
-    <!-- ====== CONTACT CTA ====== -->
-    <div class="section animate-in" style="margin-top: 5rem;">
-      <div class="contact-box">
-        <h3>Want to collaborate?</h3>
-        <p>I'm always open to discussing economic research, policy, or quantitative finance projects.</p>
-        <a href="mailto:mrigankswork@gmail.com" class="contact-btn">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Say Hello
-        </a>
+      <div class="title-center">
+        <img class="author-photo" src="profile.jpg" alt="Mrigank Bhargava">
+        <h1 class="doc-title">Mrigank Bhargava</h1>
+        <p class="doc-author-line">Student-Researcher, Economics & Quantitative Finance</p>
+        <p class="doc-affil">UN Youth Fellow &ensp;·&ensp; MIT Sloan Research Assistant &ensp;·&ensp; NYU Stern Intern</p>
+        <p class="doc-date">UPDATED: MAY 2026</p>
       </div>
     </div>
 
-  </div> <!-- /container -->
+    <!-- ====== ABSTRACT ====== -->
+    <div class="abstract-block">
+      <div class="abstract-inner">
+        <span class="abstract-heading">Abstract</span>
+        <p class="abstract-text">
+          I explore the intersections of economics, quantitative finance, and software engineering. Currently, I serve as a UN Youth Fellow and NGO Representative representing India in discussions surrounding youth-led social innovation. My research experience includes reworking the linearity assumption in Fama-French asset pricing models with an MIT Sloan PhD fellow and assisting in data science methods at NYU Stern. Additionally, I founded Project Janseva to digitize and improve resource access for local communities and developed voice-based accounting platforms. I won World Rank 2 at the International Economics Olympiad 2025 and addressed presidential committees at the UN.
+        </p>
+        <p class="abstract-note">
+          Download my <a href="https://mrigankswork.github.io/mrigank.github.io/Mrigank_Bhargava_Resume.pdf" target="_blank">Resume</a> or write to me at <a href="#contact">Correspondence (§4)</a>.
+        </p>
+      </div>
+    </div>
 
+    <!-- ====== KEYWORDS ====== -->
+    <div class="keywords-row">
+      <span class="kw-label">Keywords:</span>
+      <a class="kw-link" href="#experience">Public Policy</a>
+      <span class="kw-sep">·</span>
+      <a class="kw-link" href="#research">Quantitative Finance</a>
+      <span class="kw-sep">·</span>
+      <a class="kw-link" href="#research">Speech AI</a>
+      <span class="kw-sep">·</span>
+      <a class="kw-link" href="#photography">Postcard Lens</a>
+    </div>
+
+    <!-- ====== TABLE OF CONTENTS ====== -->
+    <div class="toc-block">
+      <span class="section-label">Contents</span>
+      <ol class="toc-list">
+        <li>
+          <a href="#experience">1 &ensp; Selected Experience</a>
+          <span class="toc-leaders"></span>
+          <a href="#experience">§1</a>
+        </li>
+        <li>
+          <a href="#research">2 &ensp; Research & Publications</a>
+          <span class="toc-leaders"></span>
+          <a href="#research">§2</a>
+        </li>
+        <li>
+          <a href="#photography">3 &ensp; Photography</a>
+          <span class="toc-leaders"></span>
+          <a href="#photography">§3</a>
+        </li>
+        <li>
+          <a href="#contact">4 &ensp; Correspondence</a>
+          <span class="toc-leaders"></span>
+          <a href="#contact">§4</a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- ====== §1 SELECTED EXPERIENCE ====== -->
+    <div class="section-head" id="experience">
+      <span class="sec-num">§1</span>
+      <span class="sec-title">Selected Experience</span>
+    </div>
+
+    <div class="entries-col">
+      <!-- Entry 1: UN -->
+      <div class="entry">
+        <span class="entry-label">[1] &nbsp; 2025 · New York & Geneva</span>
+        <h3 class="entry-title">UN Youth Fellow & NGO Representative</h3>
+        <p class="entry-desc">
+          Only Indian delegate under 18 to address the presidential committee at the UN ECOSOC Youth Forum 2025. Represented India at the High Level Political Forum (HLPF) 2025. Appointed NGO Representative for the Accessibility Atlas. Delivered a speech at the Mission of Senegal to the UN.
+        </p>
+        <a href="https://webtv.un.org/en/asset/k15/k15u7flcna?kalturaStartTime=10031" target="_blank" class="entry-readmore">Watch UN Speech Video →</a>
+      </div>
+
+      <!-- Entry 2: MIT Sloan -->
+      <div class="entry">
+        <span class="entry-label">[2] &nbsp; 2025 · Cambridge, MA (Remote)</span>
+        <h3 class="entry-title">Research Assistant @ MIT Sloan</h3>
+        <p class="entry-desc">
+          Collaborating with an MIT Sloan PhD fellow to rework the linearity assumption functions within traditional Fama-French multi-factor asset pricing models. Implementing empirical stress tests to improve structural robustness under stochastic volatility.
+        </p>
+      </div>
+
+      <!-- Entry 3: NYU Stern -->
+      <div class="entry">
+        <span class="entry-label">[3] &nbsp; Jul 2025 – Present · New York, NY (Remote)</span>
+        <h3 class="entry-title">Data Science Intern @ NYU Stern</h3>
+        <p class="entry-desc">
+          Assisting a PhD researcher with quantitative data analysis and modeling. Applying data science and econometric methods to clean and inspect complex market data structures.
+        </p>
+      </div>
+
+      <!-- Entry 4: IEO -->
+      <div class="entry">
+        <span class="entry-label">[4] &nbsp; 2025 · Baku, Azerbaijan</span>
+        <h3 class="entry-title">World Rank 2 — International Economics Olympiad</h3>
+        <p class="entry-desc">
+          Secured World Rank 2 and a Silver Medal overall at IEO 2025, scoring 191.38/200 in the rigorous Economics Round. Tested on macroeconomics, microeconomics, corporate finance, and business strategy simulations.
+        </p>
+      </div>
+
+      <!-- Entry 5: ISHET -->
+      <div class="entry">
+        <span class="entry-label">[5] &nbsp; 2025 · IIT Delhi, India</span>
+        <h3 class="entry-title">Research Presenter @ ISHET</h3>
+        <p class="entry-desc">
+          Only member under 18 ever accepted to present research at the Young Scholars Initiative (YSI) ISHET 2025 Conference hosted at IIT Delhi, discussing economic models and historical factors.
+        </p>
+      </div>
+
+      <!-- Entry 6: Project Janseva -->
+      <div class="entry">
+        <span class="entry-label">[6] &nbsp; 2024 · New Delhi, India</span>
+        <h3 class="entry-title">Founder @ Project Janseva</h3>
+        <p class="entry-desc">
+          Established a social impact organization to bridge access to services. Digitized assistance systems and conducted electoral literacy drives for blue-collar workers. Organized essential support campaigns during extreme temperature waves.
+        </p>
+        <a href="https://jansevoury.vercel.app" target="_blank" class="entry-readmore">Visit Janseva Platform →</a>
+      </div>
+
+      <!-- Entry 7: DPS Noida -->
+      <div class="entry">
+        <span class="entry-label">[7] &nbsp; 2020 – 2026 · Noida, India</span>
+        <h3 class="entry-title">Head Boy & Scholar @ DPS Noida</h3>
+        <p class="entry-desc">
+          Served as Head Boy, leading school debate and MUN delegations to national titles. Earned the Principal's Gold Medal for academic excellence (scholar badge) for six consecutive years. Felicitated as an exceptional achiever by the DPS Society.
+        </p>
+      </div>
+
+      <!-- Entry 8: IEFP -->
+      <div class="entry">
+        <span class="entry-label">[8] &nbsp; 2024 · Melbourne, Australia (Remote)</span>
+        <h3 class="entry-title">Senior Writer @ IEFP</h3>
+        <p class="entry-desc">
+          Authored and published policy reviews of the EU Macro-Financial Assistance (MFA) COVID-19 evaluations with the European Commission under the Institute of Economic and Financial Policy.
+        </p>
+      </div>
+
+      <!-- Entry 9: Programs -->
+      <div class="entry">
+        <span class="entry-label">[9] &nbsp; 2024 – 2025 · International Programs & Fellowships</span>
+        <h3 class="entry-title">Fellowships & Summer Selections</h3>
+        <p class="entry-desc">
+          Accepted to study economics and finance at Cambridge University and Oxford University summer sessions. Selected for MIT LaunchX ($6,250 scholarship) and Harvard Venture Tech ($2,000 scholarship). Member of Dyne Research and Algoverse AI.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sidenotes for §1 -->
+    <div class="sidenotes-col" aria-hidden="true">
+      <div class="sidenote">
+        <sup>†</sup>
+        <strong>United Nations</strong>: Selected as one of only 5 Indian delegates under the age of 18 to speak at the presidential committee.
+      </div>
+
+      <div class="sidenote">
+        <sup>‡</sup>
+        <strong>MIT Sloan Research</strong>: Reworking traditional linearity parameters. Simulations are constructed using numerical libraries in Python.
+      </div>
+
+      <div class="sidenote">
+        <sup>§</sup>
+        <strong>Stern Data Science</strong>: Focused on statistical model validation and empirical verification.
+      </div>
+
+      <div class="sidenote">
+        <sup>¶</sup>
+        <strong>IEO Baku</strong>: Recognized by the Indian Book of Records as the youngest Indian speaker at the UN ECOSOC Forum.
+      </div>
+
+      <div class="sidenote">
+        <sup>‖</sup>
+        <strong>ISHET 2025</strong>: Presenting alongside university researchers at IIT Delhi.
+      </div>
+
+      <div class="sidenote">
+        <sup>**</sup>
+        <strong>Project Janseva</strong>: Connects local blue-collar workers with resources and voting education.
+      </div>
+
+      <div class="sidenote">
+        <sup>††</sup>
+        <strong>DPS Noida Honors</strong>: Gold Medal scholar for 6 continuous years. Best delegation titles at GDGSN, MMUN, and St. Columba's.
+      </div>
+
+      <div class="sidenote">
+        <sup>‡‡</sup>
+        <strong>IEFP Review</strong>: The publication assesses COVID-19 macro-financial assistance packages for partner countries.
+      </div>
+
+      <div class="sidenote">
+        <sup>§§</sup>
+        <strong>Elite Selections</strong>: Fully funded fellowships and programs based on invite-only research applications.
+      </div>
+    </div>
+
+    <!-- ====== §2 RESEARCH & PUBLICATIONS ====== -->
+    <div class="section-head" id="research">
+      <span class="sec-num">§2</span>
+      <span class="sec-title">Research & Publications</span>
+    </div>
+
+    <div class="entries-col">
+      <!-- Paper 1 -->
+      <div class="entry">
+        <span class="entry-label">[1] &nbsp; Speech AI & Finance</span>
+        <h3 class="entry-title">Audio Ledger: Voice-Based Accounting System</h3>
+        <p class="entry-desc">
+          Research paper outlining a voice-based accounting system utilizing speech recognition models to convert verbal entries into structured ledgers and exportable financial statements.
+        </p>
+        <a href="https://drive.google.com/file/d/1vI6h-0hsKTDxSVp3x0kP090IL0QeWx46/view?usp=sharing" target="_blank" class="entry-readmore">Read Research Paper →</a>
+      </div>
+
+      <!-- Paper 2 -->
+      <div class="entry">
+        <span class="entry-label">[2] &nbsp; Quantitative Finance</span>
+        <h3 class="entry-title">Reworking the Linearity Assumption in Asset Pricing</h3>
+        <p class="entry-desc">
+          Research abstract exploring alternatives to linear parameters inside standard Fama-French multi-factor modeling, investigating non-linear asset behaviors.
+        </p>
+        <a href="https://drive.google.com/file/d/1Tqnk8anDVGUQSaGGaKd-tMDEW9iSzL9H/view?usp=sharing" target="_blank" class="entry-readmore">Read Abstract →</a>
+      </div>
+
+      <!-- Paper 3 -->
+      <div class="entry">
+        <span class="entry-label">[3] &nbsp; Generative Math & Art</span>
+        <h3 class="entry-title">Stochastic Chaos: Brownian Motion & Lorenz Attractors</h3>
+        <p class="entry-desc">
+          Visualizing stochastic math models and chaos theory formulations (geometric Brownian motion, strange attractors) through generative artwork.
+        </p>
+        <a href="https://drive.google.com/file/d/1fF3KlEFoJ0gh5cAoPaER-ZT36VYvL1cn/view?usp=sharing" target="_blank" class="entry-readmore">View Artwork & Paper →</a>
+      </div>
+
+      <!-- Paper 4 -->
+      <div class="entry">
+        <span class="entry-label">[4] &nbsp; Machine Learning in Markets</span>
+        <h3 class="entry-title">AI Model Comparative Testing in Trading Strategies</h3>
+        <p class="entry-desc">
+          Comparative performance evaluation of Gemini 2.5 Flash, Claude Sonnet 4, DeepSeek R1, and ChatGPT-4o in algorithmic trading compliance.
+        </p>
+        <a href="https://drive.google.com/file/d/1tF98k7ZH7K_knzZYxcMmsj3hKKuXn9_1/view?usp=sharing" target="_blank" class="entry-readmore">Read Comparative Study →</a>
+      </div>
+
+      <!-- Paper 5 -->
+      <div class="entry">
+        <span class="entry-label">[5] &nbsp; Asset Risk Modeling</span>
+        <h3 class="entry-title">GSSI: A Novel Financial Indicator Paper</h3>
+        <p class="entry-desc">
+          Research paper proposing the GSSI indicator model to track structural market signals and measure short-term risk metrics.
+        </p>
+        <a href="https://drive.google.com/file/d/18j7jTsWkHKHm5KkjmQTQTTKFGj7_eNGz/view?usp=sharing" target="_blank" class="entry-readmore">Read GSSI Paper →</a>
+      </div>
+
+      <!-- Paper 6 -->
+      <div class="entry">
+        <span class="entry-label">[6] &nbsp; Policy Analysis</span>
+        <h3 class="entry-title">EU COVID-19 Macro-Financial Evaluation</h3>
+        <p class="entry-desc">
+          Published review assessing COVID-19 emergency support packages and their stabilization effects, listed in the European Commission's database.
+        </p>
+        <a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14457-EU-financial-aid-to-10-partner-countries-COVID-19-macro-financial-assistance-package-evaluation/F3522355_en" target="_blank" class="entry-readmore">View EU Registry →</a>
+      </div>
+
+      <!-- Paper 7 -->
+      <div class="entry">
+        <span class="entry-label">[7] &nbsp; Climate Economics</span>
+        <h3 class="entry-title">South Asia Climate Finance & Greenium Articles</h3>
+        <p class="entry-desc">
+          Published columns in South Asia Monitor addressing rural credit markets, climate finance, and regional investor parameters.
+        </p>
+        <a href="https://www.southasiamonitor.org/spotlight/greenium-paradox-can-south-asia-align-climate-finance-investor-demands" target="_blank" class="entry-readmore">Read Green Bonds Article →</a> &ensp;·&ensp;
+        <a href="https://www.southasiamonitor.org/index.php/spotlight/climate-credit-markets-south-asia-next-frontier-rural-finance" target="_blank" class="entry-readmore">Read Climate Credit Article →</a>
+      </div>
+    </div>
+
+    <!-- Sidenotes for §2 -->
+    <div class="sidenotes-col" aria-hidden="true">
+      <div class="sidenote">
+        <sup>🎙️</sup>
+        <strong>IND Flow</strong>: The platform converts voice inputs into standard double-entry accounting ledgers.
+      </div>
+
+      <div class="sidenote">
+        <sup>🧮</sup>
+        <strong>Asset pricing RA</strong>: Project focused on empirical pricing formulations and stress testing.
+      </div>
+
+      <div class="sidenote">
+        <sup>📊</sup>
+        <strong>Generative Art</strong>: Renders stochastic equations into canvas designs using mathematical algorithms.
+      </div>
+
+      <div class="sidenote">
+        <sup>🤖</sup>
+        <strong>LLM Trading</strong>: Inspects limits, latency, and predictive performance in algorithmic models.
+      </div>
+
+      <div class="sidenote">
+        <sup>📈</sup>
+        <strong>GSSI Signal</strong>: Developed to enhance signal-to-noise ratio in financial indicators.
+      </div>
+
+      <div class="sidenote">
+        <sup>🇪🇺</sup>
+        <strong>MFA Review</strong>: Written in cooperation with the European Commission's public feedback registry.
+      </div>
+
+      <div class="sidenote">
+        <sup>🌿</sup>
+        <strong>South Asia Monitor</strong>: Exploring rural financing options and green bond premium modeling.
+      </div>
+    </div>
+
+    <!-- ====== §3 PHOTOGRAPHY ====== -->
+    <div class="section-head" id="photography">
+      <span class="sec-num">§3</span>
+      <span class="sec-title">Photography</span>
+    </div>
+
+    <div class="entries-col">
+      <!-- Photography Intro -->
+      <div class="entry">
+        <span class="entry-label">Through My Lens</span>
+        <h3 class="entry-title">Global Postcards</h3>
+        <p class="entry-desc">
+          Photography allows me to pause and study structures, light, and context across the world. Below is a collection of postcards captured during my travels. Hover over the cards to reveal their colors.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sidenotes for §3 -->
+    <div class="sidenotes-col" aria-hidden="true">
+      <div class="sidenote">
+        <sup>📷</sup>
+        <strong>Sepia Revealer</strong>: Postcards are styled with separation filters, returning to full color upon interaction.
+      </div>
+    </div>
+
+    <!-- Full Document Width Photography Gallery -->
+    <div class="doc-full">
+      <div class="photo-gallery">
+        <!-- Postcard 1 -->
+        <div class="postcard" style="transform: rotate(-3deg);">
+          <img src="photo1.jpeg" alt="Photography 1" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Aug 2025</span>
+          </div>
+        </div>
+        
+        <!-- Postcard 2 -->
+        <div class="postcard" style="transform: rotate(2deg) translateY(15px);">
+          <img src="photo2.jpeg" alt="Photography 2" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Jul 2024</span>
+          </div>
+        </div>
+        
+        <!-- Postcard 3 -->
+        <div class="postcard" style="transform: rotate(-1deg);">
+          <img src="photo3.jpeg" alt="Photography 3" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Jan 2024</span>
+          </div>
+        </div>
+        
+        <!-- Postcard 4 -->
+        <div class="postcard" style="transform: rotate(3deg) translateY(-10px);">
+          <img src="photo4.jpeg" alt="Photography 4" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Mar 2025</span>
+          </div>
+        </div>
+
+        <!-- Postcard 5 -->
+        <div class="postcard" style="transform: rotate(-2deg) translateY(5px);">
+          <img src="photo5.jpeg" alt="Photography 5" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Sep 2023</span>
+          </div>
+        </div>
+
+        <!-- Postcard 6 -->
+        <div class="postcard" style="transform: rotate(2deg);">
+          <img src="photo6.jpeg" alt="Photography 6" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Oct 2024</span>
+          </div>
+        </div>
+
+        <!-- Postcard 7 -->
+        <div class="postcard" style="transform: rotate(-3deg) translateY(-5px);">
+          <img src="photo7.jpeg" alt="Photography 7" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">Dec 2024</span>
+          </div>
+        </div>
+
+        <!-- Postcard 8 -->
+        <div class="postcard" style="transform: rotate(1deg) translateY(10px);">
+          <img src="photo8.jpeg" alt="Photography 8" loading="lazy">
+          <div class="postcard-caption">
+            <span class="postcard-date">May 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== §4 CORRESPONDENCE ====== -->
+    <div class="section-head" id="contact">
+      <span class="sec-num">§4</span>
+      <span class="sec-title">Correspondence</span>
+    </div>
+
+    <!-- Contact Form (Left Column) -->
+    <div class="contact-col">
+      <form id="contact-form" action="https://formspree.io/f/xpqokanp" method="POST">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="form-name">Name (Optional)</label>
+            <input type="text" id="form-name" name="name" placeholder="John Doe">
+          </div>
+          <div class="form-field">
+            <label for="form-email">Email</label>
+            <input type="email" id="form-email" name="email" required placeholder="john@example.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="form-subject">Subject</label>
+          <input type="text" id="form-subject" name="subject" required placeholder="Collaboration / Inquiry">
+        </div>
+        <div class="form-field">
+          <label for="form-message">Message</label>
+          <textarea id="form-message" name="message" required placeholder="Your message details..."></textarea>
+        </div>
+        
+        <div style="display: flex; align-items: center;">
+          <button type="submit" class="btn-send" id="submit-btn">Send Message</button>
+          <span class="form-status" id="form-status"></span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Contact Sidenote (Right Column) -->
+    <div class="contact-aside" aria-hidden="true">
+      <p>
+        For inquiries regarding quantitative finance research, economic policy analysis, or project collaborations, please use the form.
+      </p>
+      <p style="margin-top: 1.5rem;">
+        Direct Email:<br>
+        <a href="mailto:mrigankswork@gmail.com">mrigankswork@gmail.com</a>
+      </p>
+      <p style="margin-top: 1rem;">
+        LinkedIn:<br>
+        <a href="https://www.linkedin.com/in/mrigank-bhargava" target="_blank">in/mrigank-bhargava</a>
+      </p>
+      <p style="margin-top: 1rem;">
+        GitHub:<br>
+        <a href="https://github.com/mrigankswork" target="_blank">github.com/mrigankswork</a>
+      </p>
+      <p style="margin-top: 1rem;">
+        Instagram:<br>
+        <a href="https://www.instagram.com/mrigank.02/" target="_blank">@mrigank.02</a>
+      </p>
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="doc-footer">
+      <div class="footer-text">
+        <span>© 2026 MRIGANK BHARGAVA &ensp;·&ensp; EST : 100 BC @ROME</span>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/mrigank-bhargava" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/mrigankswork" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:mrigankswork@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.instagram.com/mrigank.02/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+
+  </div> <!-- /document -->
+
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

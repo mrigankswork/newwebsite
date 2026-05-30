@@ -1,91 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Tab Switching ---
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabPanes = document.querySelectorAll('.tab-pane');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.getAttribute('data-tab');
-      
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      tabPanes.forEach(pane => {
-        pane.classList.remove('active');
-        if (pane.id === target) {
-          pane.classList.add('active');
-        }
-      });
-    });
-  });
-
-  // --- Scroll Animations ---
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
-
-  // --- Radial Organization Graph Logic ---
-  const container = document.getElementById('radial-container');
-  if (container) {
-    const cards = document.querySelectorAll('.radial-card');
-    const svgLines = document.getElementById('radial-lines');
-    
-    const drawRadialLayout = () => {
-      // Clear existing lines
-      svgLines.innerHTML = '';
-      
-      if (window.innerWidth <= 768) {
-        // Mobile layout
-        cards.forEach(card => {
-          card.style.left = 'auto';
-          card.style.top = 'auto';
-        });
-        return;
-      }
-
-      // Desktop Layout - Perfect Circle
-      const centerX = container.offsetWidth / 2;
-      const centerY = container.offsetHeight / 2;
-      const radius = 280; // Fixed radius for a perfect circle
-
-      const angleStep = (2 * Math.PI) / cards.length;
-      // Start at -90deg (top) or adjust starting angle
-      const startAngle = -Math.PI / 2; 
-
-      cards.forEach((card, index) => {
-        const angle = startAngle + (index * angleStep);
-        const targetX = centerX + radius * Math.cos(angle);
-        const targetY = centerY + radius * Math.sin(angle);
-        
-        card.style.left = `${targetX}px`;
-        card.style.top = `${targetY}px`;
-        
-        // Draw SVG Line
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', centerX);
-        line.setAttribute('y1', centerY);
-        line.setAttribute('x2', targetX);
-        line.setAttribute('y2', targetY);
-        svgLines.appendChild(line);
-      });
-    };
-
-    drawRadialLayout();
-    window.addEventListener('resize', drawRadialLayout);
+  // --- Scroll Progress Bar Tracker ---
+  const prog = document.getElementById('prog');
+  if (prog) {
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const percentage = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+      prog.style.width = percentage + '%';
+    }, { passive: true });
   }
 
-  // --- Dark/Light Mode Toggle ---
+  // --- Hamburger Menu & Navigation Overlay ---
+  const hamburger = document.getElementById('hamburger');
+  const overlay = document.getElementById('nav-overlay');
+  let menuOpen = false;
+
+  if (hamburger && overlay) {
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      hamburger.classList.toggle('open', menuOpen);
+      overlay.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', menuOpen);
+      overlay.setAttribute('aria-hidden', !menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    });
+
+    // Close menu when navigation link is clicked
+    overlay.querySelectorAll('a.nav-link').forEach(l => {
+      l.addEventListener('click', () => {
+        menuOpen = false;
+        hamburger.classList.remove('open');
+        overlay.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close menu when Escape key is pressed
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && menuOpen) {
+        menuOpen = false;
+        hamburger.classList.remove('open');
+        overlay.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // --- Intersection Observer for Scroll Fade-in Animations ---
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        // Add a slight stagger effect based on index
+        setTimeout(() => e.target.classList.add('visible'), i * 65);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+  // Observe entries and sidenotes
+  document.querySelectorAll('.entry, .sidenote').forEach(el => obs.observe(el));
+
+  // --- Dark/Light Mode Theme Toggle ---
   const themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
-    // Check local storage or system preference
+    // Check saved theme or default to dark (since Navy & Silver is default dark)
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'light') {
       document.body.classList.add('light-mode');
@@ -101,38 +83,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Water Text Hover Effect ---
-  const waterName = document.getElementById('water-name');
-  if (waterName) {
-    waterName.addEventListener('mousemove', (e) => {
-      const rect = waterName.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      let percentage = (x / rect.width) * 100;
-      
-      // Add a slight threshold so it completely fills/unfills near edges
-      if (percentage < 2) percentage = 0;
-      if (percentage > 98) percentage = 100;
-      
-      waterName.style.setProperty('--water-fill', `${percentage}%`);
-    });
-    
-    waterName.addEventListener('mouseleave', () => {
-      waterName.style.setProperty('--water-fill', `0%`);
-    });
-  }
+  // --- Contact Formspree Submissions Handler ---
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('submit-btn');
+  const status = document.getElementById('form-status');
 
-  // --- Resume Button Animation ---
-  const resumeBtn = document.getElementById('resume-btn');
-  if (resumeBtn) {
-    resumeBtn.addEventListener('click', () => {
-      resumeBtn.classList.remove('fly');
-      // Trigger reflow to restart animation
-      void resumeBtn.offsetWidth;
-      resumeBtn.classList.add('fly');
+  if (form && btn && status) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
       
-      setTimeout(() => {
-        resumeBtn.classList.remove('fly');
-      }, 800);
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.textContent = '';
+      status.className = 'form-status';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (res.ok) {
+          status.textContent = 'Sent — Thank you!';
+          status.className = 'form-status ok';
+          form.reset();
+        } else {
+          const data = await res.json();
+          if (data && data.errors) {
+            status.textContent = 'Error: ' + data.errors.map(err => err.message).join(', ');
+          } else {
+            status.textContent = 'Submission failed.';
+          }
+          status.className = 'form-status err';
+        }
+      } catch (err) {
+        status.textContent = 'Connection error. Please try again.';
+        status.className = 'form-status err';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
     });
   }
 });
