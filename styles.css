@@ -132,10 +132,11 @@ img { max-width: 100%; display: block; }
 }
 
 .hero {
-  min-height: 86vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 88vh;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
   padding-top: 5rem;
 }
 
@@ -144,17 +145,15 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
 }
 
 .hero-title {
   font-family: var(--sans);
-  font-size: clamp(2.1rem, 5.8vw, 4.4rem);
+  font-size: clamp(2.4rem, 6.5vw, 4.8rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.05;
   letter-spacing: -0.025em;
-  max-width: 18ch;
-  text-wrap: balance;
 }
 .hero-title em {
   font-family: var(--serif);
@@ -163,25 +162,36 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0;
 }
 
-.hero-foot {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 3rem;
-  margin-top: 3.5rem;
-}
-
 .hero-bio {
-  max-width: 46ch;
+  max-width: 48ch;
   font-size: 0.92rem;
   color: var(--ink-soft);
+  margin-top: 1.8rem;
 }
 
 .hero-meta {
   display: flex;
   gap: 1.4rem;
-  flex-shrink: 0;
-  padding-bottom: 0.2rem;
+  margin-top: 2rem;
+}
+
+.hero-photo {
+  max-width: 420px;
+  justify-self: end;
+  width: 100%;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 13 / 14;
+  object-fit: cover;
+}
+
+.hero-photo figcaption {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  padding-top: 0.6rem;
 }
 
 /* ==========================================================================
@@ -490,15 +500,23 @@ img { max-width: 100%; display: block; }
   .index-place { display: none; }
 }
 
-@media (max-width: 600px) {
-  .hero { min-height: 78vh; }
-
-  .hero-foot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.6rem;
-    margin-top: 2.5rem;
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    align-items: start;
+    gap: 2.5rem;
+    padding-top: 7rem;
+    padding-bottom: 1rem;
   }
+
+  .hero-photo {
+    justify-self: start;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 600px) {
 
   .nav-links a:not(:last-of-type) { display: none; }
 
