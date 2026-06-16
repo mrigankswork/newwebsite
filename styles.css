@@ -220,6 +220,16 @@ img { max-width: 100%; display: block; }
   padding: 1.2rem 0 0.4rem;
 }
 
+/* Two columns flowing side by side — work + research */
+.duo {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.duo-col { min-width: 0; }
+
 /* ==========================================================================
    WORK INDEX
    ========================================================================== */
@@ -228,9 +238,9 @@ img { max-width: 100%; display: block; }
 
 .index-row {
   display: grid;
-  grid-template-columns: 90px 1fr 160px;
-  gap: 2rem;
-  padding: 1.8rem 0.6rem;
+  grid-template-columns: 64px 1fr;
+  gap: 1.4rem;
+  padding: 1.5rem 0.6rem;
   margin: 0 -0.6rem;
   border-bottom: 1px solid var(--hairline-soft);
   transition: background-color 0.25s ease;
@@ -241,21 +251,22 @@ img { max-width: 100%; display: block; }
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: var(--ink-faint);
-  padding-top: 0.25rem;
+  padding-top: 0.2rem;
   font-variant-numeric: tabular-nums;
 }
 
 .index-body h3 {
-  font-size: 1.02rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.01em;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.2rem;
 }
 
 .index-body p {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--ink-soft);
   max-width: 56ch;
+  margin-top: 0.4rem;
 }
 
 .index-body .text-link {
@@ -264,10 +275,10 @@ img { max-width: 100%; display: block; }
 }
 
 .index-place {
-  font-size: 0.78rem;
+  display: block;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
   color: var(--ink-faint);
-  text-align: right;
-  padding-top: 0.25rem;
 }
 
 /* ==========================================================================
@@ -483,11 +494,11 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) {
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .index-row {
-    grid-template-columns: 70px 1fr;
-    gap: 1.2rem;
+  .duo {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-  .index-place { display: none; }
+  .duo-col + .duo-col { padding-top: clamp(4rem, 10vh, 7rem); }
 }
 
 @media (max-width: 600px) {
